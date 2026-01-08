@@ -1,0 +1,217 @@
+{
+  "sequences": [
+    {
+      "id": "mcat-full-length-1",
+      "name": "MCAT Full Length Practice 1",
+      "description": "Comprehensive practice exam covering all MCAT sections",
+      "decks": ["biology-foundations", "chemistry-foundations", "physics-foundations", "psychology-foundations"]
+    },
+    {
+      "id": "mcat-quick-review",
+      "name": "Quick Review Session",
+      "description": "High-yield topics for rapid review",
+      "decks": ["biology-high-yield", "chemistry-high-yield"]
+    }
+  ],
+  "decks": [
+    {
+      "id": "biology-foundations",
+      "name": "Biology Foundations",
+      "description": "Core biology concepts for MCAT",
+      "questionIds": ["bio-1", "bio-2", "bio-3", "bio-4", "bio-5"]
+    },
+    {
+      "id": "biology-high-yield",
+      "name": "Biology High-Yield",
+      "description": "Most frequently tested biology topics",
+      "questionIds": ["bio-hy-1", "bio-hy-2", "bio-hy-3"]
+    },
+    {
+      "id": "chemistry-foundations",
+      "name": "Chemistry Foundations",
+      "description": "Essential chemistry for MCAT",
+      "questionIds": ["chem-1", "chem-2", "chem-3", "chem-4"]
+    },
+    {
+      "id": "chemistry-high-yield",
+      "name": "Chemistry High-Yield",
+      "description": "Critical chemistry concepts",
+      "questionIds": ["chem-hy-1", "chem-hy-2"]
+    },
+    {
+      "id": "physics-foundations",
+      "name": "Physics Foundations",
+      "description": "Fundamental physics for MCAT",
+      "questionIds": ["phys-1", "phys-2", "phys-3"]
+    },
+    {
+      "id": "psychology-foundations",
+      "name": "Psychology Foundations",
+      "description": "Behavioral sciences essentials",
+      "questionIds": ["psych-1", "psych-2", "psych-3"]
+    }
+  ],
+  "questions": [
+    {
+      "id": "bio-1",
+      "question": "Which enzyme is responsible for unwinding the DNA double helix during replication?",
+      "options": ["DNA polymerase", "Helicase", "Ligase", "Primase"],
+      "correctIndex": 1,
+      "reinforcement": "Correct! Helicase unwinds the DNA double helix by breaking hydrogen bonds between base pairs.",
+      "explanation": "Helicase is the enzyme that unwinds the DNA double helix during replication. It breaks the hydrogen bonds between complementary base pairs, separating the two strands to create a replication fork. DNA polymerase synthesizes new DNA, ligase joins Okazaki fragments, and primase creates RNA primers."
+    },
+    {
+      "id": "bio-2",
+      "question": "During which phase of mitosis do chromosomes align at the cell's equator?",
+      "options": ["Prophase", "Prometaphase", "Metaphase", "Anaphase"],
+      "correctIndex": 2,
+      "reinforcement": "Yes! Metaphase is characterized by chromosomes lining up at the metaphase plate.",
+      "explanation": "Metaphase is the phase where chromosomes align at the metaphase plate (cell's equator). During prophase, chromatin condenses. In prometaphase, the nuclear envelope breaks down. During anaphase, sister chromatids separate and move to opposite poles."
+    },
+    {
+      "id": "bio-3",
+      "question": "What is the primary function of the rough endoplasmic reticulum?",
+      "options": ["Lipid synthesis", "Protein synthesis and modification", "ATP production", "Cell division"],
+      "correctIndex": 1,
+      "reinforcement": "Correct! The rough ER's ribosomes are responsible for synthesizing proteins destined for secretion or membrane insertion.",
+      "explanation": "The rough endoplasmic reticulum (RER) is studded with ribosomes and is primarily responsible for protein synthesis and modification. Lipid synthesis occurs in the smooth ER, ATP production in mitochondria, and cell division involves the nucleus and cytoskeleton."
+    },
+    {
+      "id": "bio-4",
+      "question": "Which of the following is NOT a function of the liver?",
+      "options": ["Gluconeogenesis", "Bile production", "Insulin production", "Detoxification"],
+      "correctIndex": 2,
+      "reinforcement": "Correct! Insulin is produced by beta cells in the pancreatic islets, not the liver.",
+      "explanation": "Insulin is produced by beta cells in the islets of Langerhans in the pancreas, not the liver. The liver performs many functions including gluconeogenesis (making glucose), bile production, and detoxification of various substances."
+    },
+    {
+      "id": "bio-5",
+      "question": "In the lac operon, what molecule acts as the inducer?",
+      "options": ["Glucose", "Lactose", "Allolactose", "Galactose"],
+      "correctIndex": 2,
+      "reinforcement": "Yes! Allolactose, an isomer of lactose, is the actual inducer that binds to the lac repressor.",
+      "explanation": "Allolactose, not lactose itself, is the true inducer of the lac operon. When lactose enters the cell, some of it is converted to allolactose, which binds to the lac repressor and causes it to release from the operator, allowing transcription."
+    },
+    {
+      "id": "bio-hy-1",
+      "question": "Which of the following correctly describes the relationship between the parasympathetic nervous system and heart rate?",
+      "options": ["Increases heart rate via norepinephrine", "Decreases heart rate via acetylcholine", "Increases heart rate via acetylcholine", "Decreases heart rate via epinephrine"],
+      "correctIndex": 1,
+      "reinforcement": "Correct! The parasympathetic system uses acetylcholine to slow the heart rate.",
+      "explanation": "The parasympathetic nervous system decreases heart rate through the release of acetylcholine at the SA node. The sympathetic system increases heart rate via norepinephrine and epinephrine."
+    },
+    {
+      "id": "bio-hy-2",
+      "question": "What is the Henderson-Hasselbalch equation used to calculate?",
+      "options": ["Enzyme kinetics", "Buffer pH", "Osmotic pressure", "Membrane potential"],
+      "correctIndex": 1,
+      "reinforcement": "Yes! The Henderson-Hasselbalch equation relates pH to pKa and the ratio of conjugate base to acid.",
+      "explanation": "The Henderson-Hasselbalch equation (pH = pKa + log([A-]/[HA])) is used to calculate the pH of buffer solutions. It relates the pH to the pKa of the acid and the ratio of conjugate base to acid concentrations."
+    },
+    {
+      "id": "bio-hy-3",
+      "question": "Which amino acid has a side chain that can form disulfide bonds?",
+      "options": ["Methionine", "Serine", "Cysteine", "Threonine"],
+      "correctIndex": 2,
+      "reinforcement": "Correct! Cysteine's thiol (-SH) group can form disulfide bridges with another cysteine.",
+      "explanation": "Cysteine contains a thiol (-SH) group that can form covalent disulfide bonds (S-S) with another cysteine residue. This is important for protein tertiary and quaternary structure. Methionine also contains sulfur but cannot form disulfide bonds."
+    },
+    {
+      "id": "chem-1",
+      "question": "What is the hybridization of carbon in carbon dioxide (CO₂)?",
+      "options": ["sp", "sp²", "sp³", "sp³d"],
+      "correctIndex": 0,
+      "reinforcement": "Correct! The carbon in CO₂ is sp hybridized with two double bonds and linear geometry.",
+      "explanation": "In CO₂, the central carbon forms two double bonds with oxygen atoms. This requires sp hybridization, resulting in a linear molecular geometry with 180° bond angles. Each double bond consists of one sigma and one pi bond."
+    },
+    {
+      "id": "chem-2",
+      "question": "Which of the following has the highest boiling point?",
+      "options": ["CH₄", "NH₃", "H₂O", "HF"],
+      "correctIndex": 2,
+      "reinforcement": "Yes! Water has the highest boiling point due to extensive hydrogen bonding network.",
+      "explanation": "Water (H₂O) has the highest boiling point (100°C) among these compounds despite having a lower molecular weight than some. This is due to its extensive hydrogen bonding network, where each water molecule can form up to 4 hydrogen bonds."
+    },
+    {
+      "id": "chem-3",
+      "question": "In a galvanic cell, oxidation occurs at which electrode?",
+      "options": ["Cathode", "Anode", "Salt bridge", "Both electrodes"],
+      "correctIndex": 1,
+      "reinforcement": "Correct! Oxidation Always occurs at the Anode (remember: AN OX - anode oxidation).",
+      "explanation": "In a galvanic (voltaic) cell, oxidation occurs at the anode and reduction occurs at the cathode. A helpful mnemonic is 'AN OX, RED CAT' - Anode Oxidation, Reduction Cathode. The anode is the negative electrode in a galvanic cell."
+    },
+    {
+      "id": "chem-4",
+      "question": "What is the relationship between enantiomers?",
+      "options": ["Same compound", "Non-superimposable mirror images", "Structural isomers", "Geometric isomers"],
+      "correctIndex": 1,
+      "reinforcement": "Yes! Enantiomers are stereoisomers that are non-superimposable mirror images of each other.",
+      "explanation": "Enantiomers are stereoisomers that are non-superimposable mirror images of each other, like left and right hands. They have identical physical properties except for the direction they rotate plane-polarized light and their interactions with other chiral molecules."
+    },
+    {
+      "id": "chem-hy-1",
+      "question": "Which thermodynamic quantity is always positive for a spontaneous process?",
+      "options": ["ΔH", "ΔS", "ΔG", "-ΔG"],
+      "correctIndex": 3,
+      "reinforcement": "Correct! For spontaneous processes, ΔG is negative, making -ΔG positive.",
+      "explanation": "For a spontaneous process at constant temperature and pressure, the Gibbs free energy change (ΔG) must be negative. Therefore, -ΔG is always positive for spontaneous processes. ΔH and ΔS can be either positive or negative depending on the reaction."
+    },
+    {
+      "id": "chem-hy-2",
+      "question": "What is the effect of a catalyst on the equilibrium constant (K)?",
+      "options": ["Increases K", "Decreases K", "No effect on K", "Depends on the catalyst"],
+      "correctIndex": 2,
+      "reinforcement": "Yes! Catalysts speed up reactions but don't affect the equilibrium position or constant.",
+      "explanation": "A catalyst has no effect on the equilibrium constant (K). It lowers the activation energy equally for both forward and reverse reactions, allowing the system to reach equilibrium faster, but it doesn't change where equilibrium lies."
+    },
+    {
+      "id": "phys-1",
+      "question": "A ball is thrown straight up with an initial velocity of 20 m/s. What is its velocity at the highest point?",
+      "options": ["20 m/s upward", "10 m/s downward", "0 m/s", "9.8 m/s downward"],
+      "correctIndex": 2,
+      "reinforcement": "Correct! At the highest point, the instantaneous velocity is zero before the ball starts falling.",
+      "explanation": "At the highest point of its trajectory, the ball momentarily stops before reversing direction. The instantaneous velocity is 0 m/s. Note that while velocity is zero, acceleration is still -9.8 m/s² (downward) due to gravity."
+    },
+    {
+      "id": "phys-2",
+      "question": "Which of the following describes the relationship between pressure and volume for an ideal gas at constant temperature?",
+      "options": ["Directly proportional", "Inversely proportional", "Exponentially related", "No relationship"],
+      "correctIndex": 1,
+      "reinforcement": "Yes! Boyle's Law states that P₁V₁ = P₂V₂ at constant temperature.",
+      "explanation": "Boyle's Law describes the inverse relationship between pressure and volume at constant temperature: PV = constant. When volume decreases, pressure increases proportionally, and vice versa. This is expressed as P₁V₁ = P₂V₂."
+    },
+    {
+      "id": "phys-3",
+      "question": "What is the SI unit of electric potential difference?",
+      "options": ["Ampere", "Coulomb", "Ohm", "Volt"],
+      "correctIndex": 3,
+      "reinforcement": "Correct! The volt (V) is the SI unit of electric potential difference.",
+      "explanation": "The volt (V) is the SI unit of electric potential difference (voltage). It is defined as one joule per coulomb (J/C). Ampere measures current, coulomb measures charge, and ohm measures resistance."
+    },
+    {
+      "id": "psych-1",
+      "question": "According to Erikson, what is the primary psychosocial crisis during adolescence?",
+      "options": ["Trust vs. Mistrust", "Initiative vs. Guilt", "Identity vs. Role Confusion", "Intimacy vs. Isolation"],
+      "correctIndex": 2,
+      "reinforcement": "Correct! Adolescents work through identity vs. role confusion as they develop their sense of self.",
+      "explanation": "Erik Erikson's theory of psychosocial development identifies 'Identity vs. Role Confusion' as the crisis during adolescence (ages 12-18). Adolescents explore different roles and integrate them into a cohesive identity. Trust vs. Mistrust occurs in infancy."
+    },
+    {
+      "id": "psych-2",
+      "question": "Which neurotransmitter is most directly associated with the reward pathway?",
+      "options": ["Serotonin", "Dopamine", "GABA", "Acetylcholine"],
+      "correctIndex": 1,
+      "reinforcement": "Yes! Dopamine is the primary neurotransmitter in the mesolimbic reward pathway.",
+      "explanation": "Dopamine is the primary neurotransmitter involved in the brain's reward pathway (mesolimbic pathway). It plays a crucial role in motivation, pleasure, and reinforcement learning. Dysregulation is implicated in addiction and several psychiatric disorders."
+    },
+    {
+      "id": "psych-3",
+      "question": "What term describes the tendency to attribute others' behaviors to internal factors while attributing our own to external factors?",
+      "options": ["Self-serving bias", "Fundamental attribution error", "Actor-observer bias", "Confirmation bias"],
+      "correctIndex": 2,
+      "reinforcement": "Correct! The actor-observer bias describes this asymmetry in attribution for self vs. others.",
+      "explanation": "The actor-observer bias (or asymmetry) describes our tendency to attribute others' behaviors to their personality or disposition (internal factors) while explaining our own behaviors in terms of the situation (external factors). This differs from the fundamental attribution error, which only addresses attributions about others."
+    }
+  ]
+}
+
