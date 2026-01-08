@@ -503,7 +503,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 14px;
-  margin-bottom: 24px;
+  margin-bottom: 40px;
 }
 
 .welcome-icon {
@@ -524,13 +524,6 @@ body {
   text-transform: lowercase;
   margin: 0;
   line-height: 1;
-}
-
-.welcome-divider {
-  width: 160px;
-  height: 1px;
-  background: var(--border-color);
-  margin: 0 auto 24px;
 }
 
 .welcome-subtitle {

@@ -11,8 +11,6 @@ export default function WelcomeScreen() {
           <BonsaiIcon size={48} className="welcome-icon" />
           <h1 className="welcome-title">bonsai</h1>
         </div>
-
-        <div className="welcome-divider" />
         
         <p className="welcome-subtitle">
         Master your MCAT prep with spaced repetition
