@@ -1,18 +1,21 @@
 'use client';
 
-import { BookOpen, Zap, Brain, Sprout } from 'lucide-react';
+import { BookOpen, Zap, Brain } from 'lucide-react';
+import BonsaiIcon from './BonsaiIcon';
 
 export default function WelcomeScreen() {
   return (
     <div className="welcome-screen">
       <div className="welcome-content">
         <div className="welcome-logo">
-          <Sprout size={48} className="welcome-icon" />
-          <h1 className="welcome-title">Bonsai</h1>
+          <BonsaiIcon size={48} className="welcome-icon" />
+          <h1 className="welcome-title">bonsai</h1>
         </div>
+
+        <div className="welcome-divider" />
         
         <p className="welcome-subtitle">
-          Master your MCAT prep with spaced repetition
+        Master your MCAT prep with spaced repetition
         </p>
 
         <div className="welcome-features">
