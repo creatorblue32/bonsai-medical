@@ -1,6 +1,7 @@
 'use client';
 
-import { ChevronDown, ChevronRight, BookOpen, Layers, X, Sprout } from 'lucide-react';
+import { ChevronDown, ChevronRight, BookOpen, Layers, X } from 'lucide-react';
+import BonsaiIcon from './BonsaiIcon';
 import { StudyStore } from '@/lib/studyStore';
 
 interface SidebarProps {
@@ -24,7 +25,7 @@ export default function Sidebar({ store }: SidebarProps) {
     <aside className={`sidebar ${sidebarOpen ? 'open' : 'closed'}`}>
       <div className="sidebar-header">
         <div className="logo">
-          <Sprout size={22} className="logo-icon" />
+          <BonsaiIcon size={22} className="logo-icon" />
           <span className="logo-text">Bonsai</span>
         </div>
         <button 

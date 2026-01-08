@@ -110,13 +110,15 @@ export default function QuestionCard({ store }: QuestionCardProps) {
               const isCorrect = index === currentQuestion.correctIndex;
               const showCorrect = showingResult && isCorrect;
               const showIncorrect = showingResult && isSelected && !isCorrect;
+              // Only dim options that are neither correct nor the selected wrong answer
+              const isDimmed = showingResult && !isCorrect && !isSelected;
 
               return (
                 <button
                   key={index}
                   onClick={() => !showingResult && submitAnswer(index)}
                   disabled={showingResult}
-                  className={`option-button ${showCorrect ? 'correct' : ''} ${showIncorrect ? 'incorrect' : ''} ${isSelected && showingResult ? 'selected' : ''}`}
+                  className={`option-button ${showCorrect ? 'correct' : ''} ${showIncorrect ? 'incorrect' : ''} ${isDimmed ? 'dimmed' : ''}`}
                 >
                   <span className="option-key">
                     {showCorrect ? (
@@ -179,7 +181,7 @@ export default function QuestionCard({ store }: QuestionCardProps) {
         {/* Difficulty selection - shown for incorrect answers */}
         {showingResult && !lastAnswer?.isCorrect && (
           <>
-            <span className="difficulty-prompt">How difficult was this?</span>
+            <span className="difficulty-prompt">How well did you know this?</span>
             <div className="difficulty-options">
               {DIFFICULTY_OPTIONS.map((opt) => {
                 const isDisabled = lastAnswer?.skipped && opt.rating <= 2;

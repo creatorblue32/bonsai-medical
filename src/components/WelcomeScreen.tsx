@@ -1,14 +1,15 @@
 'use client';
 
-import { BookOpen, Zap, Brain, Sprout } from 'lucide-react';
+import { BookOpen, Zap, Brain } from 'lucide-react';
+import BonsaiIcon from './BonsaiIcon';
 
 export default function WelcomeScreen() {
   return (
     <div className="welcome-screen">
       <div className="welcome-content">
         <div className="welcome-logo">
-          <Sprout size={48} className="welcome-icon" />
-          <h1 className="welcome-title">Bonsai</h1>
+          <BonsaiIcon size={48} className="welcome-icon" />
+          <h1 className="welcome-title">bonsai</h1>
         </div>
         
         <p className="welcome-subtitle">
