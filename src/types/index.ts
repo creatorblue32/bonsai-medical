@@ -1,5 +1,12 @@
+export interface Passage {
+  id: string;
+  title: string;
+  content: string;
+}
+
 export interface Question {
   id: string;
+  passageId: string | null;
   question: string;
   options: string[];
   correctIndex: number;
@@ -24,6 +31,7 @@ export interface Sequence {
 export interface QuestionData {
   sequences: Sequence[];
   decks: Deck[];
+  passages: Passage[];
   questions: Question[];
 }
 
@@ -79,3 +87,10 @@ export interface SidebarSequence extends Sequence {
   isExpanded: boolean;
 }
 
+// Chat message for AI discussion
+export interface ChatMessage {
+  id: string;
+  role: 'user' | 'assistant';
+  content: string;
+  timestamp: Date;
+}

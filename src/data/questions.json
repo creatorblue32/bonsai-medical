@@ -51,9 +51,42 @@
       "questionIds": ["psych-1", "psych-2", "psych-3"]
     }
   ],
+  "passages": [
+    {
+      "id": "passage-dna-replication",
+      "title": "DNA Replication Mechanisms",
+      "content": "DNA replication is a semiconservative process that occurs during the S phase of the cell cycle. The process begins at specific sequences called origins of replication, where the double helix is unwound by helicase enzymes. Single-stranded binding proteins (SSBs) stabilize the separated strands, preventing them from re-annealing.\n\nThe leading strand is synthesized continuously in the 5' to 3' direction by DNA polymerase III, following the replication fork. In contrast, the lagging strand is synthesized discontinuously as Okazaki fragments, each initiated by a short RNA primer synthesized by primase. DNA polymerase I removes these RNA primers and fills in the gaps, while DNA ligase joins the fragments together.\n\nResearchers studying replication in E. coli observed that mutations in certain genes led to incomplete DNA synthesis and cell death. When they isolated the replication fork complex, they identified multiple proteins working in coordination to ensure high-fidelity DNA copying.\n\nTable 1 shows the relative rates of incorporation errors by different polymerases:\n\nPolymerase | Error Rate (per base pair)\nPol I | 1 × 10⁻⁵\nPol III | 1 × 10⁻⁷\nPol III + proofreading | 1 × 10⁻⁹"
+    },
+    {
+      "id": "passage-cell-cycle",
+      "title": "Regulation of the Cell Cycle",
+      "content": "The eukaryotic cell cycle is a tightly regulated process consisting of interphase (G1, S, and G2 phases) and mitosis (M phase). Progression through the cell cycle is controlled by cyclins and cyclin-dependent kinases (CDKs). Cyclins are regulatory proteins whose concentrations fluctuate throughout the cycle, while CDKs are enzymes that phosphorylate target proteins when bound to their cyclin partners.\n\nKey checkpoints ensure the fidelity of cell division. The G1/S checkpoint verifies that the cell has adequate nutrients and growth signals before committing to DNA replication. The G2/M checkpoint confirms that DNA replication is complete and checks for DNA damage. The spindle assembly checkpoint during metaphase ensures all chromosomes are properly attached to the spindle before anaphase begins.\n\nStudy 1: Researchers treated cells with a drug that prevents spindle fiber assembly. They observed that cells arrested in metaphase with chromosomes scattered throughout the cytoplasm.\n\nStudy 2: When p53, a tumor suppressor gene, was knocked out in mouse cells, the researchers observed continued cell division despite significant DNA damage.\n\nFigure 1 (not shown) demonstrates the cyclic expression of Cyclin B throughout the cell cycle, peaking just before mitosis and rapidly degrading during anaphase."
+    },
+    {
+      "id": "passage-enzyme-kinetics",
+      "title": "Enzyme Kinetics and Inhibition",
+      "content": "Enzymes are biological catalysts that increase reaction rates by lowering activation energy. The Michaelis-Menten model describes enzyme kinetics using two parameters: Vmax (maximum velocity) and Km (Michaelis constant). The Km represents the substrate concentration at which the reaction rate is half of Vmax and is often interpreted as an inverse measure of substrate affinity.\n\nEnzyme inhibitors can be classified based on their mechanism of action. Competitive inhibitors bind to the active site and compete with substrate, increasing the apparent Km without affecting Vmax. Non-competitive inhibitors bind to an allosteric site and reduce Vmax without changing Km. Uncompetitive inhibitors bind only to the enzyme-substrate complex, reducing both Km and Vmax proportionally.\n\nExperiment: A research team studied the kinetics of lactate dehydrogenase (LDH) in the presence of different inhibitors. They measured initial reaction velocities at varying substrate concentrations and plotted the data using Lineweaver-Burk plots (1/V vs 1/[S]).\n\nResults:\n- Inhibitor A produced parallel lines on the Lineweaver-Burk plot\n- Inhibitor B produced lines intersecting on the y-axis\n- Inhibitor C produced lines intersecting on the x-axis"
+    },
+    {
+      "id": "passage-electrochemistry",
+      "title": "Electrochemical Cells and Thermodynamics",
+      "content": "Electrochemical cells convert chemical energy to electrical energy (galvanic cells) or use electrical energy to drive non-spontaneous reactions (electrolytic cells). In a galvanic cell, oxidation occurs at the anode (negative terminal) and reduction occurs at the cathode (positive terminal). The cell potential (E°cell) is calculated as E°cathode - E°anode.\n\nThe relationship between electrochemistry and thermodynamics is given by the equation ΔG° = -nFE°, where n is the number of moles of electrons transferred, F is Faraday's constant (96,485 C/mol), and E° is the standard cell potential. For a spontaneous reaction, ΔG° must be negative, which requires E° to be positive.\n\nThe Nernst equation describes how cell potential varies with concentration:\nE = E° - (RT/nF)ln(Q)\n\nAt 25°C, this simplifies to:\nE = E° - (0.0592/n)log(Q)\n\nTable 1: Standard Reduction Potentials (25°C)\nHalf-Reaction | E° (V)\nCu²⁺ + 2e⁻ → Cu | +0.34\nZn²⁺ + 2e⁻ → Zn | -0.76\nAg⁺ + e⁻ → Ag | +0.80\nFe²⁺ + 2e⁻ → Fe | -0.44"
+    },
+    {
+      "id": "passage-kinematics",
+      "title": "Projectile Motion Analysis",
+      "content": "A physics laboratory investigated projectile motion by launching steel balls from a spring-loaded launcher at various angles. The launcher was positioned 1.0 m above the ground, and the initial speed was kept constant at 10 m/s for all trials. Air resistance was negligible.\n\nThe horizontal and vertical components of motion are independent. The horizontal velocity remains constant throughout the flight (vₓ = v₀cosθ), while the vertical velocity changes due to gravitational acceleration (vy = v₀sinθ - gt). The equations of motion are:\n\nx = v₀cosθ × t\ny = y₀ + v₀sinθ × t - ½gt²\n\nThe researchers recorded the following data:\n\nTrial | Launch Angle | Range (horizontal distance)\n1 | 15° | 6.2 m\n2 | 30° | 9.8 m\n3 | 45° | 11.2 m\n4 | 60° | 9.7 m\n5 | 75° | 6.1 m\n\nThe maximum range occurs at 45° for projectiles launched from ground level. However, when launched from a height, the optimal angle is slightly less than 45°."
+    },
+    {
+      "id": "passage-social-psychology",
+      "title": "Attribution Theory and Bias",
+      "content": "Attribution theory examines how people explain the causes of behavior and events. Fritz Heider distinguished between internal attributions (dispositional factors like personality or ability) and external attributions (situational factors like luck or circumstances). Bernard Weiner extended this framework to include dimensions of stability and controllability.\n\nResearch has identified several systematic biases in attribution. The fundamental attribution error (FAE) refers to observers' tendency to overemphasize dispositional factors when explaining others' behavior while underestimating situational influences. Interestingly, this bias appears less pronounced in collectivistic cultures, suggesting cultural influences on attributional patterns.\n\nStudy 1: Participants read essays either supporting or opposing a controversial policy. Half were told the essay writers chose their position freely, while the other half were told the position was assigned. Even when participants knew the position was assigned, they still rated writers as personally holding the views expressed in their essays.\n\nStudy 2: Participants who failed a test were asked to explain their performance. Those with high self-esteem tended to attribute failure to external factors (the test was unfair), while those with low self-esteem more often attributed failure to internal factors (I'm not smart enough)."
+    }
+  ],
   "questions": [
     {
       "id": "bio-1",
+      "passageId": "passage-dna-replication",
       "question": "Which enzyme is responsible for unwinding the DNA double helix during replication?",
       "options": ["DNA polymerase", "Helicase", "Ligase", "Primase"],
       "correctIndex": 1,
@@ -62,6 +95,7 @@
     },
     {
       "id": "bio-2",
+      "passageId": "passage-cell-cycle",
       "question": "During which phase of mitosis do chromosomes align at the cell's equator?",
       "options": ["Prophase", "Prometaphase", "Metaphase", "Anaphase"],
       "correctIndex": 2,
@@ -70,14 +104,16 @@
     },
     {
       "id": "bio-3",
-      "question": "What is the primary function of the rough endoplasmic reticulum?",
-      "options": ["Lipid synthesis", "Protein synthesis and modification", "ATP production", "Cell division"],
+      "passageId": "passage-dna-replication",
+      "question": "Based on Table 1 in the passage, the proofreading function of DNA Polymerase III reduces the error rate by approximately:",
+      "options": ["10-fold", "100-fold", "1,000-fold", "10,000-fold"],
       "correctIndex": 1,
-      "reinforcement": "Correct! The rough ER's ribosomes are responsible for synthesizing proteins destined for secretion or membrane insertion.",
-      "explanation": "The rough endoplasmic reticulum (RER) is studded with ribosomes and is primarily responsible for protein synthesis and modification. Lipid synthesis occurs in the smooth ER, ATP production in mitochondria, and cell division involves the nucleus and cytoskeleton."
+      "reinforcement": "Correct! The error rate drops from 10⁻⁷ to 10⁻⁹, a 100-fold improvement.",
+      "explanation": "According to Table 1, Pol III without proofreading has an error rate of 1 × 10⁻⁷, while Pol III with proofreading has an error rate of 1 × 10⁻⁹. The difference is 10⁻⁷/10⁻⁹ = 10² = 100-fold reduction in errors."
     },
     {
       "id": "bio-4",
+      "passageId": null,
       "question": "Which of the following is NOT a function of the liver?",
       "options": ["Gluconeogenesis", "Bile production", "Insulin production", "Detoxification"],
       "correctIndex": 2,
@@ -86,14 +122,21 @@
     },
     {
       "id": "bio-5",
-      "question": "In the lac operon, what molecule acts as the inducer?",
-      "options": ["Glucose", "Lactose", "Allolactose", "Galactose"],
+      "passageId": "passage-cell-cycle",
+      "question": "Based on Study 2 in the passage, which of the following best explains why cells continued dividing despite DNA damage?",
+      "options": [
+        "The spindle checkpoint was inactivated",
+        "Cyclin B levels remained elevated",
+        "The G1/S checkpoint was bypassed due to loss of p53 function",
+        "DNA ligase activity was enhanced"
+      ],
       "correctIndex": 2,
-      "reinforcement": "Yes! Allolactose, an isomer of lactose, is the actual inducer that binds to the lac repressor.",
-      "explanation": "Allolactose, not lactose itself, is the true inducer of the lac operon. When lactose enters the cell, some of it is converted to allolactose, which binds to the lac repressor and causes it to release from the operator, allowing transcription."
+      "reinforcement": "Yes! p53 is a key regulator of the G1/S checkpoint that normally arrests cells with DNA damage.",
+      "explanation": "p53 is a critical tumor suppressor that functions at the G1/S checkpoint. When DNA damage is detected, p53 normally halts the cell cycle to allow for repair or triggers apoptosis. Without p53, cells bypass this checkpoint and continue dividing even with damaged DNA."
     },
     {
       "id": "bio-hy-1",
+      "passageId": null,
       "question": "Which of the following correctly describes the relationship between the parasympathetic nervous system and heart rate?",
       "options": ["Increases heart rate via norepinephrine", "Decreases heart rate via acetylcholine", "Increases heart rate via acetylcholine", "Decreases heart rate via epinephrine"],
       "correctIndex": 1,
@@ -102,14 +145,16 @@
     },
     {
       "id": "bio-hy-2",
-      "question": "What is the Henderson-Hasselbalch equation used to calculate?",
-      "options": ["Enzyme kinetics", "Buffer pH", "Osmotic pressure", "Membrane potential"],
-      "correctIndex": 1,
-      "reinforcement": "Yes! The Henderson-Hasselbalch equation relates pH to pKa and the ratio of conjugate base to acid.",
-      "explanation": "The Henderson-Hasselbalch equation (pH = pKa + log([A-]/[HA])) is used to calculate the pH of buffer solutions. It relates the pH to the pKa of the acid and the ratio of conjugate base to acid concentrations."
+      "passageId": "passage-enzyme-kinetics",
+      "question": "Based on the experimental results described in the passage, Inhibitor B is most likely a:",
+      "options": ["Competitive inhibitor", "Non-competitive inhibitor", "Uncompetitive inhibitor", "Irreversible inhibitor"],
+      "correctIndex": 0,
+      "reinforcement": "Yes! Lines intersecting on the y-axis indicates the same Vmax but different Km values, characteristic of competitive inhibition.",
+      "explanation": "On a Lineweaver-Burk plot, competitive inhibitors produce lines that intersect on the y-axis (same y-intercept = same 1/Vmax). This is because competitive inhibitors increase the apparent Km (x-intercept changes) but do not affect Vmax."
     },
     {
       "id": "bio-hy-3",
+      "passageId": null,
       "question": "Which amino acid has a side chain that can form disulfide bonds?",
       "options": ["Methionine", "Serine", "Cysteine", "Threonine"],
       "correctIndex": 2,
@@ -118,6 +163,7 @@
     },
     {
       "id": "chem-1",
+      "passageId": null,
       "question": "What is the hybridization of carbon in carbon dioxide (CO₂)?",
       "options": ["sp", "sp²", "sp³", "sp³d"],
       "correctIndex": 0,
@@ -126,6 +172,7 @@
     },
     {
       "id": "chem-2",
+      "passageId": null,
       "question": "Which of the following has the highest boiling point?",
       "options": ["CH₄", "NH₃", "H₂O", "HF"],
       "correctIndex": 2,
@@ -134,14 +181,16 @@
     },
     {
       "id": "chem-3",
-      "question": "In a galvanic cell, oxidation occurs at which electrode?",
-      "options": ["Cathode", "Anode", "Salt bridge", "Both electrodes"],
+      "passageId": "passage-electrochemistry",
+      "question": "Based on the standard reduction potentials in Table 1, what is the standard cell potential for a galvanic cell made with copper and zinc electrodes?",
+      "options": ["+0.42 V", "+1.10 V", "-1.10 V", "+0.34 V"],
       "correctIndex": 1,
-      "reinforcement": "Correct! Oxidation Always occurs at the Anode (remember: AN OX - anode oxidation).",
-      "explanation": "In a galvanic (voltaic) cell, oxidation occurs at the anode and reduction occurs at the cathode. A helpful mnemonic is 'AN OX, RED CAT' - Anode Oxidation, Reduction Cathode. The anode is the negative electrode in a galvanic cell."
+      "reinforcement": "Correct! E°cell = E°cathode - E°anode = (+0.34) - (-0.76) = +1.10 V",
+      "explanation": "In a Cu-Zn galvanic cell, copper is reduced (cathode, E° = +0.34 V) and zinc is oxidized (anode, E° = -0.76 V). The cell potential is E°cell = E°cathode - E°anode = +0.34 - (-0.76) = +1.10 V."
     },
     {
       "id": "chem-4",
+      "passageId": null,
       "question": "What is the relationship between enantiomers?",
       "options": ["Same compound", "Non-superimposable mirror images", "Structural isomers", "Geometric isomers"],
       "correctIndex": 1,
@@ -150,14 +199,21 @@
     },
     {
       "id": "chem-hy-1",
-      "question": "Which thermodynamic quantity is always positive for a spontaneous process?",
-      "options": ["ΔH", "ΔS", "ΔG", "-ΔG"],
-      "correctIndex": 3,
-      "reinforcement": "Correct! For spontaneous processes, ΔG is negative, making -ΔG positive.",
-      "explanation": "For a spontaneous process at constant temperature and pressure, the Gibbs free energy change (ΔG) must be negative. Therefore, -ΔG is always positive for spontaneous processes. ΔH and ΔS can be either positive or negative depending on the reaction."
+      "passageId": "passage-electrochemistry",
+      "question": "According to the passage, for a galvanic cell operating spontaneously, which of the following must be true?",
+      "options": [
+        "ΔG° is positive and E° is positive",
+        "ΔG° is negative and E° is positive",
+        "ΔG° is negative and E° is negative",
+        "ΔG° is positive and E° is negative"
+      ],
+      "correctIndex": 1,
+      "reinforcement": "Correct! ΔG° = -nFE°, so when E° is positive, ΔG° is negative, indicating spontaneity.",
+      "explanation": "For a spontaneous reaction, ΔG° must be negative. Since ΔG° = -nFE°, and n and F are always positive, E° must be positive to make ΔG° negative. Therefore, spontaneous galvanic cells have positive cell potentials."
     },
     {
       "id": "chem-hy-2",
+      "passageId": null,
       "question": "What is the effect of a catalyst on the equilibrium constant (K)?",
       "options": ["Increases K", "Decreases K", "No effect on K", "Depends on the catalyst"],
       "correctIndex": 2,
@@ -166,14 +222,16 @@
     },
     {
       "id": "phys-1",
-      "question": "A ball is thrown straight up with an initial velocity of 20 m/s. What is its velocity at the highest point?",
-      "options": ["20 m/s upward", "10 m/s downward", "0 m/s", "9.8 m/s downward"],
+      "passageId": "passage-kinematics",
+      "question": "According to the passage, which trial(s) would have the longest time of flight?",
+      "options": ["Trial 1", "Trial 3", "Trial 5", "Trials 3 and 5 are equal"],
       "correctIndex": 2,
-      "reinforcement": "Correct! At the highest point, the instantaneous velocity is zero before the ball starts falling.",
-      "explanation": "At the highest point of its trajectory, the ball momentarily stops before reversing direction. The instantaneous velocity is 0 m/s. Note that while velocity is zero, acceleration is still -9.8 m/s² (downward) due to gravity."
+      "reinforcement": "Correct! Higher launch angles result in greater initial vertical velocity and longer flight times.",
+      "explanation": "Time of flight depends primarily on the vertical component of velocity (v₀sinθ). Trial 5 with a 75° launch angle has the greatest vertical velocity component, resulting in the longest time in the air, even though it doesn't achieve the maximum range."
     },
     {
       "id": "phys-2",
+      "passageId": null,
       "question": "Which of the following describes the relationship between pressure and volume for an ideal gas at constant temperature?",
       "options": ["Directly proportional", "Inversely proportional", "Exponentially related", "No relationship"],
       "correctIndex": 1,
@@ -182,22 +240,30 @@
     },
     {
       "id": "phys-3",
-      "question": "What is the SI unit of electric potential difference?",
-      "options": ["Ampere", "Coulomb", "Ohm", "Volt"],
-      "correctIndex": 3,
-      "reinforcement": "Correct! The volt (V) is the SI unit of electric potential difference.",
-      "explanation": "The volt (V) is the SI unit of electric potential difference (voltage). It is defined as one joule per coulomb (J/C). Ampere measures current, coulomb measures charge, and ohm measures resistance."
+      "passageId": "passage-kinematics",
+      "question": "Based on the data in the passage, if the launch height were increased to 2.0 m while keeping initial speed and angle at 45°, the range would most likely:",
+      "options": ["Decrease", "Remain the same", "Increase", "Cannot be determined"],
+      "correctIndex": 2,
+      "reinforcement": "Correct! A higher launch position gives the projectile more time in the air, increasing range.",
+      "explanation": "Increasing the launch height adds to the total vertical distance the projectile travels before hitting the ground. This means more time in the air, allowing the horizontal velocity to carry the ball further. Range would increase."
     },
     {
       "id": "psych-1",
-      "question": "According to Erikson, what is the primary psychosocial crisis during adolescence?",
-      "options": ["Trust vs. Mistrust", "Initiative vs. Guilt", "Identity vs. Role Confusion", "Intimacy vs. Isolation"],
-      "correctIndex": 2,
-      "reinforcement": "Correct! Adolescents work through identity vs. role confusion as they develop their sense of self.",
-      "explanation": "Erik Erikson's theory of psychosocial development identifies 'Identity vs. Role Confusion' as the crisis during adolescence (ages 12-18). Adolescents explore different roles and integrate them into a cohesive identity. Trust vs. Mistrust occurs in infancy."
+      "passageId": "passage-social-psychology",
+      "question": "According to the passage, what does Study 1 primarily demonstrate?",
+      "options": [
+        "The self-serving bias",
+        "The fundamental attribution error",
+        "The actor-observer bias",
+        "Cultural differences in attribution"
+      ],
+      "correctIndex": 1,
+      "reinforcement": "Correct! Participants attributed dispositional characteristics to writers even when they knew positions were assigned.",
+      "explanation": "Study 1 demonstrates the fundamental attribution error—observers attributed the essay writers' positions to their personal beliefs even when they knew the position was externally assigned. This shows the tendency to over-emphasize dispositional factors when explaining others' behavior."
     },
     {
       "id": "psych-2",
+      "passageId": null,
       "question": "Which neurotransmitter is most directly associated with the reward pathway?",
       "options": ["Serotonin", "Dopamine", "GABA", "Acetylcholine"],
       "correctIndex": 1,
@@ -206,12 +272,17 @@
     },
     {
       "id": "psych-3",
-      "question": "What term describes the tendency to attribute others' behaviors to internal factors while attributing our own to external factors?",
-      "options": ["Self-serving bias", "Fundamental attribution error", "Actor-observer bias", "Confirmation bias"],
+      "passageId": "passage-social-psychology",
+      "question": "Based on Study 2 in the passage, which of the following best explains the difference in attributions between high and low self-esteem participants?",
+      "options": [
+        "High self-esteem participants have better memory for test questions",
+        "Low self-esteem participants demonstrate the self-serving bias",
+        "High self-esteem participants demonstrate the self-serving bias",
+        "Both groups show the fundamental attribution error"
+      ],
       "correctIndex": 2,
-      "reinforcement": "Correct! The actor-observer bias describes this asymmetry in attribution for self vs. others.",
-      "explanation": "The actor-observer bias (or asymmetry) describes our tendency to attribute others' behaviors to their personality or disposition (internal factors) while explaining our own behaviors in terms of the situation (external factors). This differs from the fundamental attribution error, which only addresses attributions about others."
+      "reinforcement": "Correct! The self-serving bias leads people to attribute successes to internal factors and failures to external factors.",
+      "explanation": "The self-serving bias involves attributing positive outcomes to internal factors and negative outcomes to external factors. High self-esteem participants protected their self-image by blaming external factors for failure. Low self-esteem participants did not show this protective pattern."
     }
   ]
 }
-

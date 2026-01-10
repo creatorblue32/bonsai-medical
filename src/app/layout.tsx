@@ -15,8 +15,15 @@ const cormorantGaramond = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Bonsai - MCAT Study Companion",
+  title: "Bonsai - MCAT Study",
   description: "Master your MCAT prep with spaced repetition",
+  icons: {
+    icon: [
+      { url: '/favicon.ico' },
+      { url: '/bonsaitransparent.svg', type: 'image/svg+xml' },
+    ],
+    apple: '/bonsaitransparent.svg',
+  },
 };
 
 export default function RootLayout({
