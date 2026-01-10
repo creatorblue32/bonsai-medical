@@ -8,7 +8,8 @@ import {
   DifficultyRating,
   Question,
   Deck,
-  Sequence
+  Sequence,
+  Passage,
 } from '@/types';
 import { 
   createInitialCardState, 
@@ -36,11 +37,25 @@ export function useStudyStore() {
   const [lastAnswer, setLastAnswer] = useState<AnswerResult | null>(null);
   const [showingResult, setShowingResult] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [showChat, setShowChat] = useState(false);
 
   // Get all data
   const sequences = questionData.sequences as Sequence[];
   const decks = questionData.decks as Deck[];
+  const passages = (questionData.passages || []) as Passage[];
   const questions = questionData.questions as Question[];
+
+  // Get passage for a question
+  const getPassageForQuestion = useCallback((questionId: string): Passage | null => {
+    const question = questions.find((q) => q.id === questionId);
+    if (!question || !question.passageId) return null;
+    return passages.find((p) => p.id === question.passageId) || null;
+  }, [questions, passages]);
+
+  // Get current passage
+  const currentPassage = studyQueue.length > 0 && currentQuestionIndex < studyQueue.length
+    ? getPassageForQuestion(studyQueue[currentQuestionIndex])
+    : null;
 
   // Get deck stats
   const getDeckStats = useCallback((deckId: string): DeckStats => {
@@ -101,6 +116,7 @@ export function useStudyStore() {
     setLastAnswer(null);
     setShowingResult(false);
     setSidebarOpen(false); // Auto-hide sidebar when deck selected
+    setShowChat(false);
   }, [cardStates, decks]);
 
   // Get current question
@@ -121,6 +137,11 @@ export function useStudyStore() {
       skipped,
     });
     setShowingResult(true);
+    
+    // Show chat interface for incorrect answers
+    if (!isCorrect) {
+      setShowChat(true);
+    }
   }, [currentQuestion]);
 
   // Rate difficulty and move to next question
@@ -148,6 +169,7 @@ export function useStudyStore() {
     setCurrentQuestionIndex((prev) => prev + 1);
     setLastAnswer(null);
     setShowingResult(false);
+    setShowChat(false);
   }, [lastAnswer, currentQuestion, cardStates]);
 
   // Continue after correct answer
@@ -170,6 +192,7 @@ export function useStudyStore() {
     setCurrentQuestionIndex((prev) => prev + 1);
     setLastAnswer(null);
     setShowingResult(false);
+    setShowChat(false);
   }, [lastAnswer, currentQuestion, cardStates]);
 
   // Close study session
@@ -180,6 +203,7 @@ export function useStudyStore() {
     setLastAnswer(null);
     setShowingResult(false);
     setSidebarOpen(true); // Show sidebar when returning to library
+    setShowChat(false);
   }, []);
 
   // Toggle sidebar
@@ -197,6 +221,7 @@ export function useStudyStore() {
     // Data
     sequences,
     decks,
+    passages,
     questions,
     cardStates,
     expandedSequences,
@@ -205,12 +230,16 @@ export function useStudyStore() {
     selectedDeckId,
     selectedDeck,
     currentQuestion,
+    currentPassage,
     currentQuestionIndex,
     studyQueue,
     lastAnswer,
     showingResult,
     isSessionComplete,
     sidebarOpen,
+    
+    // Chat state
+    showChat,
     
     // Actions
     getDeckStats,
@@ -221,8 +250,8 @@ export function useStudyStore() {
     continueAfterCorrect,
     closeDeck,
     toggleSidebar,
+    getPassageForQuestion,
   };
 }
 
 export type StudyStore = ReturnType<typeof useStudyStore>;
-
