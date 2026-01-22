@@ -30,7 +30,7 @@ function initializeCardStates(): Map<string, CardState> {
 
 export function useStudyStore() {
   const [cardStates, setCardStates] = useState<Map<string, CardState>>(initializeCardStates);
-  const [expandedSequences, setExpandedSequences] = useState<Set<string>>(new Set(['mcat-full-length-1', 'mcat-quick-review']));
+  const [expandedSequences, setExpandedSequences] = useState<Set<string>>(new Set(['biochemistry', 'physiology']));
   const [selectedDeckId, setSelectedDeckId] = useState<string | null>(null);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [studyQueue, setStudyQueue] = useState<string[]>([]);
@@ -38,6 +38,12 @@ export function useStudyStore() {
   const [showingResult, setShowingResult] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [showChat, setShowChat] = useState(false);
+  const [selectedSubject, setSelectedSubject] = useState<{
+    id: string;
+    name: string;
+    progress: number;
+    status: 'good' | 'on-track' | 'behind';
+  } | null>(null);
 
   // Get all data
   const sequences = questionData.sequences as Sequence[];
@@ -211,6 +217,21 @@ export function useStudyStore() {
     setSidebarOpen((prev) => !prev);
   }, []);
 
+  // Select subject for detail view
+  const selectSubject = useCallback((subject: {
+    id: string;
+    name: string;
+    progress: number;
+    status: 'good' | 'on-track' | 'behind';
+  }) => {
+    setSelectedSubject(subject);
+  }, []);
+
+  // Clear subject selection
+  const clearSubject = useCallback(() => {
+    setSelectedSubject(null);
+  }, []);
+
   // Check if session is complete
   const isSessionComplete = studyQueue.length > 0 && currentQuestionIndex >= studyQueue.length;
 
@@ -241,6 +262,9 @@ export function useStudyStore() {
     // Chat state
     showChat,
     
+    // Subject detail state
+    selectedSubject,
+    
     // Actions
     getDeckStats,
     toggleSequence,
@@ -251,6 +275,8 @@ export function useStudyStore() {
     closeDeck,
     toggleSidebar,
     getPassageForQuestion,
+    selectSubject,
+    clearSubject,
   };
 }
 
