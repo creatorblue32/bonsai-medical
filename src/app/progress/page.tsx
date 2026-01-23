@@ -3,6 +3,7 @@
 import { PanelLeft } from 'lucide-react';
 import Sidebar from '@/components/Sidebar';
 import ThemeToggle from '@/components/ThemeToggle';
+import ProtectedRoute from '@/components/ProtectedRoute';
 import { useStudyStore } from '@/lib/studyStore';
 
 const step1Topics = [
@@ -86,7 +87,8 @@ export default function ProgressPage() {
   const { sidebarOpen, toggleSidebar } = store;
 
   return (
-    <div className={`app-container ${sidebarOpen ? 'sidebar-open' : 'sidebar-closed'}`}>
+    <ProtectedRoute>
+      <div className={`app-container ${sidebarOpen ? 'sidebar-open' : 'sidebar-closed'}`}>
       <Sidebar store={store} />
 
       {!sidebarOpen && (
@@ -143,5 +145,6 @@ export default function ProgressPage() {
         </div>
       </main>
     </div>
+    </ProtectedRoute>
   );
 }
