@@ -12,6 +12,9 @@ import {
 } from 'lucide-react';
 import BonsaiIcon from './BonsaiIcon';
 
+// Daily study status types
+type DayStatus = 'none' | 'future' | 'missed' | 'started' | 'completed';
+
 // Static task data
 const todayTasks = [
   {
@@ -50,8 +53,72 @@ const MONTHS = [
   'July', 'August', 'September', 'October', 'November', 'December'
 ];
 
-// Days with scheduled items (static)
-const scheduledDays = new Set([15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25]);
+// Static study history data (simulated)
+// Key format: "YYYY-MM-DD", value: { status }
+const studyHistory: Record<string, { status: DayStatus }> = {
+  // December 2025 (previous month overflow)
+  '2025-12-28': { status: 'completed' },
+  '2025-12-29': { status: 'completed' },
+  '2025-12-30': { status: 'missed' },
+  '2025-12-31': { status: 'completed' },
+  // January 2026 - Full month
+  '2026-01-01': { status: 'completed' },
+  '2026-01-02': { status: 'completed' },
+  '2026-01-03': { status: 'started' },
+  '2026-01-04': { status: 'missed' },
+  '2026-01-05': { status: 'completed' },
+  '2026-01-06': { status: 'completed' },
+  '2026-01-07': { status: 'completed' },
+  '2026-01-08': { status: 'started' },
+  '2026-01-09': { status: 'missed' },
+  '2026-01-10': { status: 'completed' },
+  '2026-01-11': { status: 'completed' },
+  '2026-01-12': { status: 'completed' },
+  '2026-01-13': { status: 'completed' },
+  '2026-01-14': { status: 'started' },
+  '2026-01-15': { status: 'completed' },
+  '2026-01-16': { status: 'completed' },
+  '2026-01-17': { status: 'completed' },
+  '2026-01-18': { status: 'started' },
+  '2026-01-19': { status: 'completed' },
+  '2026-01-20': { status: 'started' }, // Today - in progress
+  '2026-01-21': { status: 'future' },
+  '2026-01-22': { status: 'future' },
+  '2026-01-23': { status: 'future' },
+  '2026-01-24': { status: 'future' },
+  '2026-01-25': { status: 'future' },
+  '2026-01-26': { status: 'future' },
+  '2026-01-27': { status: 'future' },
+  '2026-01-28': { status: 'future' },
+  '2026-01-29': { status: 'future' },
+  '2026-01-30': { status: 'future' },
+  '2026-01-31': { status: 'future' },
+  // February 2026 (next month overflow)
+  '2026-02-01': { status: 'future' },
+  '2026-02-02': { status: 'future' },
+  '2026-02-03': { status: 'future' },
+  '2026-02-04': { status: 'future' },
+  '2026-02-05': { status: 'future' },
+  '2026-02-06': { status: 'future' },
+  '2026-02-07': { status: 'future' },
+};
+
+// Get the heatmap class based on status
+function getHeatmapLevel(status: DayStatus): string {
+  switch (status) {
+    case 'completed': return 'heat-completed';
+    case 'started': return 'heat-started';
+    case 'missed': return 'heat-missed';
+    case 'future': return 'heat-future';
+    case 'none':
+    default: return 'heat-none';
+  }
+}
+
+// Format date as YYYY-MM-DD
+function formatDateKey(year: number, month: number, day: number): string {
+  return `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
+}
 
 export default function HomeCalendar() {
   const today = new Date(2026, 0, 20);
@@ -91,20 +158,58 @@ export default function HomeCalendar() {
     currentMonth - 1 < 0 ? currentYear - 1 : currentYear
   );
 
-  const calendarDays = [];
+  const calendarDays: Array<{
+    day: number;
+    isCurrentMonth: boolean;
+    isToday: boolean;
+    heatLevel: string;
+    dateKey: string;
+  }> = [];
   
+  // Previous month days
+  const prevMonthIdx = currentMonth - 1 < 0 ? 11 : currentMonth - 1;
+  const prevMonthYear = currentMonth - 1 < 0 ? currentYear - 1 : currentYear;
   for (let i = firstDay - 1; i >= 0; i--) {
-    calendarDays.push({ day: daysInPrevMonth - i, isCurrentMonth: false, isToday: false });
+    const day = daysInPrevMonth - i;
+    const dateKey = formatDateKey(prevMonthYear, prevMonthIdx, day);
+    const dayData = studyHistory[dateKey];
+    calendarDays.push({ 
+      day, 
+      isCurrentMonth: false, 
+      isToday: false,
+      heatLevel: dayData ? getHeatmapLevel(dayData.status) : 'heat-none',
+      dateKey
+    });
   }
   
+  // Current month days
   for (let i = 1; i <= daysInMonth; i++) {
     const isToday = i === today.getDate() && currentMonth === today.getMonth() && currentYear === today.getFullYear();
-    calendarDays.push({ day: i, isCurrentMonth: true, isToday });
+    const dateKey = formatDateKey(currentYear, currentMonth, i);
+    const dayData = studyHistory[dateKey];
+    calendarDays.push({ 
+      day: i, 
+      isCurrentMonth: true, 
+      isToday,
+      heatLevel: dayData ? getHeatmapLevel(dayData.status) : 'heat-none',
+      dateKey
+    });
   }
   
+  // Next month days
   const remainingDays = 42 - calendarDays.length;
+  const nextMonthIdx = currentMonth + 1 > 11 ? 0 : currentMonth + 1;
+  const nextMonthYear = currentMonth + 1 > 11 ? currentYear + 1 : currentYear;
   for (let i = 1; i <= remainingDays; i++) {
-    calendarDays.push({ day: i, isCurrentMonth: false, isToday: false });
+    const dateKey = formatDateKey(nextMonthYear, nextMonthIdx, i);
+    const dayData = studyHistory[dateKey];
+    calendarDays.push({ 
+      day: i, 
+      isCurrentMonth: false, 
+      isToday: false,
+      heatLevel: dayData ? getHeatmapLevel(dayData.status) : 'heat-none',
+      dateKey
+    });
   }
 
   const getIcon = (type: 'questions' | 'review' | 'video') => {
@@ -145,14 +250,32 @@ export default function HomeCalendar() {
           {calendarDays.map((d, i) => (
             <div 
               key={i} 
-              className={`day-cell ${!d.isCurrentMonth ? 'muted' : ''} ${d.isToday ? 'today' : ''}`}
+              className={`day-cell ${d.isToday ? 'today' : ''} ${d.heatLevel}`}
+              title={d.dateKey}
             >
               <span>{d.day}</span>
-              {d.isCurrentMonth && scheduledDays.has(d.day) && !d.isToday && (
-                <span className="day-dot" />
-              )}
             </div>
           ))}
+        </div>
+
+        {/* Heatmap Legend */}
+        <div className="heatmap-legend">
+          <div className="legend-item">
+            <div className="legend-square heat-completed" />
+            <span className="legend-label">Completed</span>
+          </div>
+          <div className="legend-item">
+            <div className="legend-square heat-started" />
+            <span className="legend-label">Started</span>
+          </div>
+          <div className="legend-item">
+            <div className="legend-square heat-missed" />
+            <span className="legend-label">Missed</span>
+          </div>
+          <div className="legend-item">
+            <div className="legend-square heat-future" />
+            <span className="legend-label">Scheduled</span>
+          </div>
         </div>
       </div>
 
