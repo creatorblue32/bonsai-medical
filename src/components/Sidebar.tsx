@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation';
 import { ChevronsUpDown, X, Home, LineChart, Settings, CalendarCog, BookOpen, User } from 'lucide-react';
 import BonsaiIcon from './BonsaiIcon';
 import { StudyStore } from '@/lib/studyStore';
+import { useAuth } from '@/contexts/AuthContext';
 
 type Exam = {
   id: string;
@@ -27,6 +28,7 @@ export default function Sidebar({ store }: SidebarProps) {
     toggleSidebar,
   } = store;
 
+  const { user, logout } = useAuth();
   const [selectedExamId, setSelectedExamId] = useState<string>('step1');
   const [examDropdownOpen, setExamDropdownOpen] = useState(false);
   const pathname = usePathname();
@@ -37,6 +39,16 @@ export default function Sidebar({ store }: SidebarProps) {
     setSelectedExamId(examId);
     setExamDropdownOpen(false);
   };
+
+  const handleLogout = async () => {
+    try {
+      await logout();
+    } catch (error) {
+      console.error('Error logging out:', error);
+    }
+  };
+
+  const displayName = user?.displayName || 'User';
 
   return (
     <aside className={`sidebar ${sidebarOpen ? 'open' : 'closed'}`}>
@@ -84,8 +96,8 @@ export default function Sidebar({ store }: SidebarProps) {
         <div className="nav-section">
           <span className="nav-section-label">Study</span>
           <Link
-            href="/"
-            className={`sidebar-nav-link ${pathname === '/' ? 'active' : ''}`}
+            href="/app"
+            className={`sidebar-nav-link ${pathname === '/app' ? 'active' : ''}`}
           >
             <Home size={16} className="sidebar-nav-icon" />
             <span className="sidebar-nav-text">Upcoming Sessions</span>
@@ -132,9 +144,9 @@ export default function Sidebar({ store }: SidebarProps) {
       <div className="sidebar-footer">
         <div className="user-info">
           <User size={16} className="user-icon" />
-          <span className="user-name">Elyas</span>
+          <span className="user-name">{displayName}</span>
         </div>
-        <button className="logout-button">
+        <button className="logout-button" onClick={handleLogout}>
           Log out
         </button>
       </div>

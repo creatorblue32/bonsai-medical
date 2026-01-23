@@ -3,6 +3,7 @@
 import { useStudyStore } from '@/lib/studyStore';
 import Sidebar from '@/components/Sidebar';
 import ThemeToggle from '@/components/ThemeToggle';
+import ProtectedRoute from '@/components/ProtectedRoute';
 import { PanelLeft, ExternalLink, Youtube, BookOpen, FileText, Video } from 'lucide-react';
 
 const resources = [
@@ -99,7 +100,8 @@ export default function ResourcesPage() {
   const { sidebarOpen, toggleSidebar } = store;
 
   return (
-    <div className={`app-container ${sidebarOpen ? 'sidebar-open' : 'sidebar-closed'}`}>
+    <ProtectedRoute>
+      <div className={`app-container ${sidebarOpen ? 'sidebar-open' : 'sidebar-closed'}`}>
       <Sidebar store={store} />
       
       {!sidebarOpen && (
@@ -157,5 +159,6 @@ export default function ResourcesPage() {
         </div>
       </main>
     </div>
+    </ProtectedRoute>
   );
 }

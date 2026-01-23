@@ -1,17 +1,16 @@
 'use client';
 
+import { useEffect } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
 import { useRouter } from 'next/navigation';
-import { useEffect } from 'react';
-import LandingPage from '@/components/LandingPage';
 
-export default function Home() {
+export default function ProtectedRoute({ children }: { children: React.ReactNode }) {
   const { user, loading } = useAuth();
   const router = useRouter();
 
   useEffect(() => {
-    if (!loading && user) {
-      router.push('/app');
+    if (!loading && !user) {
+      router.push('/');
     }
   }, [user, loading, router]);
 
@@ -24,9 +23,9 @@ export default function Home() {
     );
   }
 
-  if (user) {
+  if (!user) {
     return null;
   }
 
-  return <LandingPage />;
+  return <>{children}</>;
 }
