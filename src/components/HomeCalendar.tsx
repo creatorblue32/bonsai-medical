@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { 
   ChevronLeft, 
   ChevronRight, 
@@ -10,6 +10,8 @@ import {
   Circle,
   CheckCircle2
 } from 'lucide-react';
+import { useAuth } from '@/contexts/AuthContext';
+import { getUserStudyProfile } from '@/lib/firebase';
 import BonsaiIcon from './BonsaiIcon';
 
 // Daily study status types
@@ -121,9 +123,27 @@ function formatDateKey(year: number, month: number, day: number): string {
 }
 
 export default function HomeCalendar() {
+  const { user } = useAuth();
   const today = new Date(2026, 0, 20);
   const [currentMonth, setCurrentMonth] = useState(today.getMonth());
   const [currentYear, setCurrentYear] = useState(today.getFullYear());
+  const [userName, setUserName] = useState('');
+
+  useEffect(() => {
+    async function fetchUserName() {
+      if (user) {
+        try {
+          const profile = await getUserStudyProfile(user.uid);
+          if (profile?.name) {
+            setUserName(profile.name);
+          }
+        } catch (error) {
+          console.error('Error fetching user name:', error);
+        }
+      }
+    }
+    fetchUserName();
+  }, [user]);
 
   const getDaysInMonth = (month: number, year: number) => {
     return new Date(year, month + 1, 0).getDate();
@@ -225,7 +245,7 @@ export default function HomeCalendar() {
       <div className="home-card">
         <div className="home-card-header">
           <BonsaiIcon size={36} className="welcome-icon" />
-          <h1 className="welcome-heading">Welcome back, Elyas</h1>
+          <h1 className="welcome-heading">Welcome back{userName ? `, ${userName}` : ''}</h1>
         </div>
         
         <div className="home-card-content">
